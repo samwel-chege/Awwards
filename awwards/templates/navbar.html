@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <nav class="navbar navbar-inverse bg-info">
+        <div class="container-fluid">
+              <div>
+                <a href="{% url 'admin:index' %}"><i class="fas fa-user-lock fa-1x ms-1" style="color: #06101a;"></i></a>
+              </div>
+            <div class="nav-icons">
+              <a href=""><i class="fa fa-upload" aria-hidden="true" style="color: #06101a;"></i></a>
+            </div>
+              <div class="header">
+                  <h5>Awwwards.</h5>
+              </div>
+        <div class="col-sm-6 col-md-6">
+          <div class="dropdown">
+            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1"
+                    data-bs-toggle="dropdown" aria-expanded="false">
+                Account
+            </button>
+            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                {% if user.is_authenticated%}
+                <li><a class="dropdown-item" href="">Profile</a></li>
+                <li><a class="dropdown-item" href="">Logout</a></li>
+                {%else%}
+                <li><a class="dropdown-item" href="">Login</a></li>
+                <li><a class="dropdown-item" href="">Upload photo</a></li>
+                <li><a class="dropdown-item" href="">Signup</a></li>
+                {%endif%}
+            </ul>
+        </div>
+          </div>
+    </div>
+    </nav>
+   
+    
+</body>
+</html>
