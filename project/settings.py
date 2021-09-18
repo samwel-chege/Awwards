@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'awwards',
     'bootstrap5',
     'django_registration',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
