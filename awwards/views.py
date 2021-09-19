@@ -7,17 +7,33 @@ from rest_framework.views import APIView
 from .models import Project
 from .serializer import ProjectSerializer
 from awwards import serializer
+from .forms import ProjectForm
 # Create your views here.
 def home(request):
     projects = Project.display_projects()
     profile = Profile.objects.all()
+    if request.method == 'POST':
+        form = ProjectForm(request.POST)
+        if form.is_valid():
+            project = form.save()
+            project.user = request.user
+            project.save()
+    else:
+        form = ProjectForm()
+    try:
+        project = Project.objects.all()
+    except:
+        project.DoesNotExist
+        project = None
 
-    return render(request,'index.html',{"projects":projects,"profile":profile})
+    return render(request,'index.html',{"projects":projects,"profile":profile,"form":form,"project":project})
+
 
 class ProjectList(APIView):
     def get(self,request,format=None):
         all_projects = Project.objects.all()
         serializers = ProjectSerializer(all_projects,many=True)
         return Response(serializers.data)
+
 
 
