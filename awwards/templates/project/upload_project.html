@@ -1,0 +1,22 @@
+{%extends 'base.html'%}
+{% load static %}
+{% load bootstrap5 %}
+{% block styles %}
+{{ block.super}}
+<link rel="stylesheet" href="{% static 'css/upload_project.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="box">
+    <div class="text-center">
+    <div class="title">New project</div>
+    <hr>
+    <div class="guide">Add a project by providing the project title, project screenshot, a short description of the project and  a live link to the website.</div>
+    </div>
+    <form action="{%url 'uploadproject'%}" method="post" enctype="multipart/form-data">
+        {%csrf_token%}    
+        {% bootstrap_form form%}
+        <input type="submit" class="btn btn-dark " value=" Add Project">
+    </form>
+</div>
+{% endblock %}
