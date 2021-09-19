@@ -20,28 +20,19 @@
     <div class="container">
         <div class="card" style="margin-bottom: 5rem;">
             <div class="card-header d-flex">
-                <!-- <div class="profile">
-                <img src="{{project.project.image.url}}" width="50" height="50" class="rounded-circle mb-2" alt="">
-                <p>{{image.profile.user}}</p>
-             </div>  -->
+               
             </div>
             <img src="{{project.image.url}} " class="img-responsive" alt="">
             <div class="card-body">
-                
+                    <a href="{{project.link}}">Live link</a>
                     <div class="text-muted">{{project.create_date | timesince }} ago</div>
                 </div>
             </div>
             <div class="card-footer" style="padding: 0;">
-                <!-- <form role="add_comment" , action="">
-                    {% csrf_token%}
-                    <div class="input-group">
-                        <input type="text" class="form-control" placeholder="Add a comment" name="comment"
-                            style="font-size: 1.2rem; border: 0;">
-                        <div class="input-group-btn">
-                            <button class="btn" type="submit" style="font-size: 1.2rem;"> Post</button>
-                        </div>
-                    </div>
-                </form> -->
+                <div class="profile">
+                <img src="{{project.project.image.url}}" width="50" height="50" class="rounded-circle mb-2" alt="">
+                <p>{{image.profile.user}}</p>
+             </div> 
             </div>
         </div>
     </div>
