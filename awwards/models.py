@@ -48,6 +48,10 @@ class Project(models.Model):
     def get_user_projects(cls,profile):
         return cls.objects.filter(profile=profile)  
 
+    @classmethod
+    def search(cls,title):
+        return Project.objects.filter(title__icontains = title)    
+
     class Meta:
         ordering = ['-create_date']                  
 
