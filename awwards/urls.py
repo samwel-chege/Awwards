@@ -13,6 +13,7 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.home,name='home'),
+    path('api/projects/', views.ProjectList.as_view())
  
 ]
 
