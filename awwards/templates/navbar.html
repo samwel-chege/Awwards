@@ -1,3 +1,27 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="collapse" id="navbarToggleExternalContent">
+    <div class="bg-dark p-4">
+      <h5 class="text-white h4">Collapsed content</h5>
+      <span class="text-muted">Toggleable via the navbar brand.</span>
+    </div>
+  </div>
+  <nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+    </div>
+  </nav>
+</body>
+</html> -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,7 +35,7 @@
                 <a href="{% url 'admin:index' %}"><i class="fas fa-user-lock fa-1x ms-1" style="color: #06101a;"></i></a>
               </div>
             <div class="nav-icons">
-              <a href=""><i class="fa fa-upload" aria-hidden="true" style="color: #06101a;"></i></a>
+              <a href="{% url 'uploadproject' %}"><i class="fa fa-upload" aria-hidden="true" style="color: #06101a;"></i>Upload</a>
             </div>
               <div class="header">
                   <h5>Awwwards.</h5>
@@ -33,7 +57,25 @@
                 {%endif%}
             </ul>
         </div>
+        
           </div>
+          <div class="col-sm-6 col-md-6">
+            <div class="dropdown">
+              <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1"
+                      data-bs-toggle="dropdown" aria-expanded="false">
+                  API
+              </button>
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="/api/profiles/">Profiles</a></li>
+                    <li><a class="dropdown-item" href="/api/projects/">Projects</a></li>
+                  </ul>
+                </li>
+                
+              </ul>
+          </div>
+          
+            </div>
+          
     </div>
     </nav>
    
