@@ -15,5 +15,5 @@ class ProfileForm(forms.Form):
 class UploadProjectForm(ModelForm):
     class Meta:
         model = Project
-        fields = ('title','image','description','link','profile','create_date')     
+        fields = ('title','image','description','link',)     
         
