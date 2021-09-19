@@ -14,7 +14,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('', views.home,name='home'),
     path('api/projects/', views.ProjectList.as_view()),
-    path('api/profiles/', views.ProfileList.as_view())
+    path('api/profiles/', views.ProfileList.as_view()),
+    path('upload/project/',views.uploadproject,name='uploadproject')
  
 ]
 
