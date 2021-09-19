@@ -24,9 +24,15 @@
             </div>
             <img src="{{project.image.url}} " class="img-responsive" alt="">
             <div class="card-body">
-                    <a href="{{project.link}}">Live link</a>
                     <div class="text-muted">{{project.create_date | timesince }} ago</div>
+                    <div class="card_article">
+                        <article class="card_article">
+                            <h3><a href="{{project.link}}">{{project.title}}</a></h3>
+                            <p>{{project.description}}</p>
+                        </article>
+                    </div>
                 </div>
+                
             </div>
             <div class="card-footer" style="padding: 0;">
                 <div class="profile">
