@@ -1,0 +1,96 @@
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+{% load bootstrap5 %}
+{% block styles%}
+{{block.super}}
+<link rel="stylesheet" href="{% static 'css/upload_project.css' %}">
+{%endblock%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Awwards</title>
+</head>
+<body>
+    <div class="container">
+        <h3>Review and rate projects</h3>
+    </div>
+    <div class="container">
+        <div class="card" style="margin-bottom: 5rem;">
+            <div class="card-header d-flex">
+               
+            </div>
+            <img src="{{project.image.url}} " class="img-responsive" alt="">
+            <div class="card-body">
+                    <div class="text-muted">{{project.create_date | timesince }} ago</div>
+                    <div class="card_article">
+                        <article class="card_article">
+                            <h3><a href="{{project.link}}">{{project.title}}</a></h3>
+                            <p>{{project.description}}</p>
+                        </article>
+                    </div>
+                    <div class="card-author" style="padding: 0;">
+                        <div class="profile">
+                        <img src="{{project.profile.photo.url}}" width="50" height="50" class="rounded-circle mb-2" alt=""><span class="px-2">By <span style="color: cornflowerblue;">{{project.profile.user.username}}</span></span>
+                        
+                     </div> 
+                    </div>
+                   <!-- rate form -->
+                    <div class="box">
+                        <div class="text-center">
+                        <div class="title">Rate project</div>
+                        <hr>
+                        <div class="guide">Rate the project according to the design,usability and design</div>
+                        </div>
+                        <form action="" method="post" enctype="multipart/form-data">
+                            {%csrf_token%}    
+                            {% bootstrap_form form%}
+                            
+                            <input type="submit" class="btn btn-dark " value="Rate Project">
+                        </form>
+                    </div>
+                   <!-- end of rate form -->
+                   <!-- results form -->
+                   
+                   <!-- end of results from -->
+                </div>
+               
+            </div>
+            
+        </div>
+    </div>
+    <div class="footer">
+        <footer>
+            <div class="container">
+                <nav class="footer-nav">
+                    <ul>
+                        <li>
+                            <a href="#">Contact us</a>
+                        </li>
+                        <li>
+                            <a href="#">F.A.Q</a>
+                        </li>
+                        <li>
+                            <a href="#">Cookies Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">Legal Terms</a>
+                        </li>
+                        <li>
+                            <a href="#">Privacy Policy</a>
+                        </li>
+                        <li>
+                            <a href="#">English</a>
+                        </li>
+                        
+                    </ul>
+                </nav>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
+{%endblock%}
