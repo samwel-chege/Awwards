@@ -53,7 +53,14 @@ class Project(models.Model):
         return Project.objects.filter(title__icontains = title)    
 
     class Meta:
-        ordering = ['-create_date']                  
+        ordering = ['-create_date']     
+
+
+class Rate(models.Model):
+    design = models.FloatField(blank=True)
+    usability = models.FloatField(blank=True)
+    content = models.FloatField(blank=True)
+
 
 
 
