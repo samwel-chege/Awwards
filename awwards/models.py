@@ -61,6 +61,13 @@ class Rate(models.Model):
     usability = models.FloatField(blank=True)
     content = models.FloatField(blank=True)
 
+    def save_rate(self):
+        self.save()
+
+    def delete_rate(self):
+        self.delete()
+            
+
 
 
 
