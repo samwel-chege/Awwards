@@ -16,7 +16,7 @@
     <div class="image">
         <img src="{{project.image.url}}" alt="">
     </div>
-    {% for project in projects %}
+    {% for project in project %}
     <div class="container">
         <div class="card" style="margin-bottom: 5rem;">
             <div class="card-header d-flex">
@@ -37,7 +37,7 @@
                         
                      </div> 
                     </div>
-                    <a href="{%  url 'rateproject' project.id %}"><button type="submit" class="btn btn-dark " value="Rate"></button></a>
+                    <a href="{% url 'rate' project.id%}"><button class="btn btn-dark">Rate</button></a>
                 </div>
                
             </div>
