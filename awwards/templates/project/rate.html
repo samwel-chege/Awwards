@@ -41,20 +41,56 @@
                    <!-- rate form -->
                     <div class="box">
                         <div class="text-center">
-                        <div class="title">Rate project</div>
+                        <div class="title"><strong>Rate project</strong></div>
                         <hr>
                         <div class="guide">Rate the project according to the design,usability and design</div>
                         </div>
-                        <form action="" method="post" enctype="multipart/form-data">
+                        <form action="{%url 'rate' id%}" method="post" enctype="multipart/form-data">
                             {%csrf_token%}    
-                            {% bootstrap_form form%}
+                            {% bootstrap_form rating_form%}
                             
                             <input type="submit" class="btn btn-dark " value="Rate Project">
                         </form>
                     </div>
                    <!-- end of rate form -->
                    <!-- results form -->
-                   
+                   <div class="box">
+                   <table class="table">
+                    <thead>
+                        <tr>
+                            <td colspan='5'>
+                                <h2 class=" text-center" style="color: rgb(29, 174, 231);">Ratings</h2>
+                            </td>
+                        </tr>
+                    </thead>
+                    <thead>
+                        <tr>
+                            <th scope="col "> Design</th>
+                            <th scope="col "> Content</th>
+                            <th scope="col "> Usability</th>
+                            <th scope="col "> Score</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for rate in rate %}
+                        <tr>
+                            <td>
+                                <h2>{{rate.design}}</h2>
+                            </td>
+                            <td>
+                                <h2>{{rate.content}}</h2>
+                            </td>
+                            <td>
+                                <h2>{{rate.usability}}</h2>
+                            </td>
+                            <td>
+                                <h2>{{rate.score}}</h2>
+                            </td>
+                            
+            </div>
+            {%endfor%}
+            </table>
+            </div>
                    <!-- end of results from -->
                 </div>
                
