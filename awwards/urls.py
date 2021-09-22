@@ -16,8 +16,9 @@ urlpatterns = [
     path('api/projects/', views.ProjectList.as_view()),
     path('api/profiles/', views.ProfileList.as_view()),
     path('upload/project/',views.uploadproject,name='uploadproject'),
+    path('profile/',views.profile,name = 'profile'),
     path(r'^search/', views.search_projects, name='search_projects'),
-    path('rate_project/<int:id>',views.rate,name='rateproject')
+    path('rate/(?P<project>\d+)',views.rate,name='rate'),
 
  
 ]
