@@ -24,9 +24,9 @@ class Profile(models.Model):
 
    
 class Project(models.Model):
-    title = models.TextField(max_length=10)
+    title = models.TextField(max_length=50)
     image = models.ImageField(upload_to='photos')
-    description = models.TextField(max_length=50)
+    description = models.TextField(max_length=200)
     link  = models.URLField()
     profile = models.ForeignKey(Profile,on_delete=models.CASCADE)
     create_date = models.DateTimeField(auto_now_add=True, null=True)
@@ -57,16 +57,33 @@ class Project(models.Model):
 
 
 class Rate(models.Model):
-    design = models.FloatField(blank=True)
-    usability = models.FloatField(blank=True)
-    content = models.FloatField(blank=True)
+    rating=((1,'1'),(2,'2'),(3,'3'),(4,'4'),(5,'5'),(6,'6'),(7,'7'),(8,'8'),(9,'9'),(10,'10'),)
+    design=models.IntegerField(choices=rating, default=0, blank=True)
+    usability=models.IntegerField(choices=rating, blank=True)
+    content=models.IntegerField(choices=rating, blank=True)
+    design_average=models.FloatField(default=0, blank=True)
+    usability_average=models.FloatField(default=0, blank=True)
+    content_average=models.FloatField(default=0, blank=True)
+    score=models.FloatField(default=0, blank=True)
+    user=models.ForeignKey(User, on_delete=models.CASCADE, null=True)
+    project=models.ForeignKey(Project, on_delete=models.CASCADE, null=True)
 
-    def save_rate(self):
+    def save_rating(self):
         self.save()
 
-    def delete_rate(self):
-        self.delete()
-            
+    @classmethod
+    def get_ratings(cls, id):
+        ratings = Rate.objects.filter(project_id=id).all()
+        return ratings(len(ratings) == 1)
+
+    def __str__(self):
+        return f'{self.project} Rating'
+   
+
+        
+
+
+
 
 
 
