@@ -37,7 +37,7 @@ These are the actions the user will do, inputs required and their outputs on the
 
 ## Live Demo
 
-[Live Demo Link](--)
+[Live Demo Link](https://projects-rating.herokuapp.com/)
 
 
 ### Installation Process
