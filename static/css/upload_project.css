@@ -7,12 +7,12 @@
 } */
 
 .box {
-    background: rgb(15, 179, 190);
+    background: rgb(220, 235, 245);
     border-radius: 0.625rem;
     display: flex;
     flex-direction: column;
     width: 100%;
-    color: #fff;
+    color: rgb(59, 58, 58);
     padding: 2%;
     margin-bottom: 3%;
     text-align: center;

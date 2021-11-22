@@ -7,17 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
-    <nav class="navbar navbar-inverse bg-info">
-        <div class="container-fluid">
-          <div class="header">
-            <a href="{% url 'home'%}">Awwards.</a>
-        </div>
-              <div>
+    <nav class="navbar fixed-top navbar-expand-lg navbar-dark scrolling-navbar" style="background-color: cadetblue;">
+        <div class="container">
+          <!-- <div class="header"> -->
+            <a class="navbar-brand" href="{% url 'home'%}" style="color: #FF7F50;"><strong>Awwards</strong></a>
+        <!-- </div> -->
+        <!-- collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+        aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item active">
+            <a  class="nav-link" href="#" style="color: #FF7F50;">Home 
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{% url 'uploadproject' %}" style="color: #FF7F50;">Upload</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href=""></a>
+          </li>
+        </ul>
+      </div>
+              <!-- <div>
                 <a href="{% url 'admin:index' %}"><i class="fas fa-user-lock fa-1x ms-1" style="color: #06101a;"></i></a>
-              </div>
-            <div class="nav-icons">
+              </div> -->
+            <!-- <div class="nav-icons">
               <a href="{% url 'uploadproject' %}"><i class="fa fa-upload" aria-hidden="true" style="color: #06101a;"></i>Upload</a>
-            </div>
+            </div> -->
              
         <div class="col-sm-6 col-md-6">
           <div class="dropdown">
@@ -47,7 +71,7 @@
               </div>
             </div>
           </form>
-          <div class="col-sm-6 col-md-6">
+          <!-- <div class="col-sm-6 col-md-6">
             <div class="dropdown">
               <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenuButton1"
                       data-bs-toggle="dropdown" aria-expanded="false">
@@ -62,7 +86,7 @@
               </ul>
           </div>
           
-            </div>
+            </div> -->
           
     </div>
     </nav>
